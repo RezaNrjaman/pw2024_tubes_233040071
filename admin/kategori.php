@@ -51,7 +51,12 @@ $jumlahuniversitas = mysqli_num_rows($queryuniversitas);
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">
-                    <i class="fa-solid fa-house" style="color: #26cf3a;"></i>Home
+                    <a href="../admin" class="no-decoration" style="color: #26cf3a;">
+                        <i class="fa-solid fa-house" style="color: #26cf3a;"></i>Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    Kategori
                 </li>
             </ol>
         </nav>
@@ -63,11 +68,11 @@ $jumlahuniversitas = mysqli_num_rows($queryuniversitas);
                     <div class="summary-kategori p-3 bg-success">
                         <div class="row">
                             <div class="col-6">
-                                <i class="fa-solid fa-bars fa-6x mt-3" style="color: #f0f2f5; margin-left:25px;"></i>
+                                <i class="fa-solid fa-building-columns fa-6x mt-3" style="color: #f0f2f5; margin-left:25px;"></i>
                             </div>
                             <div class="col-6 text-white">
-                                <h3 class="fs-2">Kategori</h3>
-                                <p class="fs-4"> <?php echo $jumlahkategori; ?> Kategori</p>
+                                <h3 class="fs-2">NEGERI</h3>
+                                <p class="fs-4"> <?php echo $jumlahkategori; ?> Universitas</p>
                                 <p><a href="kategori.php" class="text-white no-decoration">Lihat Detail</a></p>
                             </div>
                         </div>
@@ -80,7 +85,7 @@ $jumlahuniversitas = mysqli_num_rows($queryuniversitas);
                                 <i class="fa-solid fa-building-columns fa-6x mt-3" style="color: #f0f2f5; margin-left:25px;"></i>
                             </div>
                             <div class="col-6 text-white">
-                                <h3 class="fs-2">Universitas</h3>
+                                <h3 class="fs-2">SWASTA</h3>
                                 <p class="fs-4"><?php echo $jumlahuniversitas; ?> Universitas</p>
                                 <p><a href="universitas.php" class="text-white no-decoration">Lihat Detail</a></p>
                             </div>
