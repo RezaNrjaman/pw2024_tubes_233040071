@@ -1,0 +1,64 @@
+.warna1 {
+  background-color: #1a4d2e;
+}
+
+.warna2 {
+  background-color: #4f6f52;
+}
+
+.warna3 {
+  background-color: #e8dfca;
+}
+
+.warna4 {
+  background-color: #f5efe6;
+}
+
+.banner {
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../image/tbi.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 15px;
+}
+
+.highlighted-kategori {
+  height: 250px;
+}
+
+.kategori-negeri {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../image/ui.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.kategori-swasta {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../image/telu.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.no-decoration {
+  text-decoration: none;
+  color: white;
+}
+
+.no-decoration:hover {
+  color: #e8dfca;
+}
+
+.text-jumlah {
+  font-size: 20px;
+  color: #4f6f52;
+}
+
+.image-box {
+  height: 200px;
+}
+
+.image-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}

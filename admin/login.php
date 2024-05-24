@@ -42,8 +42,12 @@ require "../koneksi.php";
                     <input type="password" class="form-control" name="password" id="password"></input>
                 </div>
                 <div>
-                    <button class="btn btn-success form-control" type="submit" name="loginbtn">Login</button>
+                    <button class="btn btn-success form-control" type="submit" name="loginbtn" style="margin-top: 10px;">Login</button>
                 </div>
+                <div>
+                    <a href="registrasi.php"><button class="btn btn-success form-control" type="submit" name="registrasibtn" style="margin-top: 10px;">Registrasi</button></a>
+                </div>
+
             </form>
         </div>
         <div class="mt-3" style="width: 500px;">
@@ -60,7 +64,7 @@ require "../koneksi.php";
                     if (password_verify($password, $data['password'])) {
                         $_SESSION['username'] = $data['username'];
                         $_SESSION['login'] = true;
-                        header('location: ../admin');
+                        header('location: universitas.php');
                     } else {
             ?>
                         <div class="alert alert-warning" role="alert">

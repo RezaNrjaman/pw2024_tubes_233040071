@@ -52,7 +52,7 @@ function generateRandomString($length = 20)
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">
                     <a href="../admin" class="no-decoration" style="color: #26cf3a;">
-                        <i class="fa-solid fa-house" style="color: #26cf3a;"></i>Home
+                        <i class="fa-solid fa-house" style="color: #1A4D2E;"></i>Home
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
@@ -91,7 +91,7 @@ function generateRandomString($length = 20)
                     <input type="file" name="foto" id="foto" class="form-control" required>
                 </div>
                 <div class="mt-3">
-                    <button class="btn btn-primary" type="submit" name="simpan">Simpan</button>
+                    <button class="btn btn-primary" type="submit" name="simpan" href="admin/index.php">Simpan</button>
                 </div>
             </form>
 
