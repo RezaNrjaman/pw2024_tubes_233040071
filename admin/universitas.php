@@ -17,7 +17,6 @@ function generateRandomString($length = 20)
     }
     return $randomString;
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +46,7 @@ function generateRandomString($length = 20)
 
 <body>
     <?php require "navbar.php"; ?>
-    <div class="container mt-5">
+    <div class="container mt-5 pt-5">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">
@@ -172,54 +171,72 @@ function generateRandomString($length = 20)
         </div>
         <h2>List Universitas</h2>
         <div class="table-responsive mt-5 mb-5">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Nama</th>
-                        <th>Kategori</th>
-                        <th>Jumlah Fakultas</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    if ($jumlahUniversitas == 0) {
-                    ?>
+            <div id="container">
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td colspan=6 class="text-center">Data kategori tidak tersedia</td>
+                            <th>No.</th>
+                            <th>Nama</th>
+                            <th>Kategori</th>
+                            <th>Jumlah Fakultas</th>
+                            <th>Action</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <?php
-                    } else {
-                        $jumlah = 1;
-                        while ($data = mysqli_fetch_array($query)) {
+                        if ($jumlahUniversitas == 0) {
                         ?>
                             <tr>
-                                <td><?php echo $jumlah; ?></td>
-                                <td><?php echo $data['nama']; ?></td>
-                                <td><?php echo $data['nama_kategori']; ?></td>
-                                <td><?php echo $data['jumlah']; ?></td>
-                                <td>
-                                    <a href="universitas-detail.php?p=<?php echo $data['id']; ?>" class="btn btn-info"><i class="fas fa-search"></i></a>
-                                </td>
+                                <td colspan=6 class="text-center">Data kategori tidak tersedia</td>
                             </tr>
-                    <?php
-                            $jumlah++;
+                            <?php
+                        } else {
+                            $jumlah = 1;
+                            while ($data = mysqli_fetch_array($query)) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $jumlah; ?></td>
+                                    <td><?php echo $data['nama']; ?></td>
+                                    <td><?php echo $data['nama_kategori']; ?></td>
+                                    <td><?php echo $data['jumlah']; ?></td>
+                                    <td>
+                                        <a href="universitas-detail.php?p=<?php echo $data['id']; ?>" class="btn btn-info"><i class="fas fa-search"></i></a>
+                                    </td>
+                                </tr>
+                        <?php
+                                $jumlah++;
+                            }
                         }
-                    }
-                    ?>
-                </tbody>
-            </table>
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
 
 
-
     </div>
 
     </div>
+    <script>
+        var keyword = document.getElementById("keyword");
+        var tombolCari = document.getElementById("tombol-cari");
+        var container = document.getElementById("container");
 
+        keyword.addEventListener("keyup", function() {
+            var xhr = new XMLHttpRequest();
 
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    container.innerHTML = xhr.responseText;
+                }
+            };
+
+            xhr.open("GET", "../ajax/universitas.php?keyword=" + keyword.value, true);
+            xhr.send();
+        });
+    </script>
+    <!-- <script src="../js/script.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/796f8abcad.js" crossorigin="anonymous"></script>
 </body>

@@ -1,26 +1,26 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', '', 'pw2024_tubes_233040071');
-
-// check connection
-if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    exit();
+function koneksiDB()
+{
+    $db = mysqli_connect('localhost', 'root', '', 'pw2024_tubes_233040071');
+    return $db;
 }
-
 
 function query($sql)
 {
-    $conn = mysqli_connect('localhost', 'root', '', 'pw2024_tubes_233040071');
-
+    $conn = koneksiDB();
     $result = mysqli_query($conn, $sql);
     $rows = [];
     while ($row = mysqli_fetch_assoc($result)) {
         $rows[] = $row;
-    };
+    }
     return $rows;
 }
 
-
+function cari($data)
+{
+    $query = "SELECT * FROM universitas WHERE nama LIKE '%$data%'";
+    return query($query);
+}
 
 function registrasi($data)
 {
@@ -29,9 +29,12 @@ function registrasi($data)
     $username = strtolower(stripslashes($data["username"]));
     $password = mysqli_real_escape_string($conn, $data["password"]);
     $password2 = mysqli_real_escape_string($conn, $data["password2"]);
+    $query = "SELECT * FROM user WHERE username = '$username'";
+
+
 
     // cek username sudah ada atau belum
-    $result = mysqli_query($conn, "INSERT INTO user VALUES (NULL, '$username', '$password' )");
+    $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
     if (mysqli_fetch_assoc($result)) {
         echo "<script>
         alert('username sudah digunakan!');

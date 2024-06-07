@@ -16,7 +16,10 @@
                     <a class="nav-link" href="#universitas">Universitas</a>
                 </li>
                 <a href="admin/index.php"><button class="btn btn-success" type="submit">Login</button></a>
-
+                <form class="d-flex" style="padding-left: 700px;" role="search" method="post" action="">
+                    <input class="form-control me-2" type="text" name="keyword" placeholder="Search" aria-label="Search" autocomplete="off" id="keyword">
+                    <button class="btn btn-outline-dark text-white me-3" type="submit" name="cari" id="tombol-cari">Search</button>
+                </form>
             </ul>
 
         </div>

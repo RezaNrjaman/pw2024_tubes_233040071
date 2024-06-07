@@ -71,7 +71,7 @@ function generateRandomString($length = 20)
                     <input type="number" id="jumlah_fakultas" name="jumlah_fakultas" value="<?php echo $data['jumlah']; ?>" class=" form-control" autocomplete="off" required>
                 </div>
                 <div>
-                    <label for="currentfoto">Foto Produk Sekarang</label>
+                    <label for="currentfoto">Foto Universitas Sekarang</label>
                     <img src="../image/<?php echo $data['foto']; ?>" alt="" width="300px">
                 </div>
                 <div>

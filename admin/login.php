@@ -31,6 +31,8 @@ require "../koneksi.php";
 
 <body>
     <div class="main d-flex flex-column justify-content-center align-items-center">
+
+        <h3 style="color: white;"><a href="../index.php"><i class="fa-solid fa-backward" style="margin-right: 25px; color:white;"></i></a>LOGIN FOR ADMIN</h3>
         <div class="login-box p-5 shadow">
             <form action="" method="post">
                 <div>
@@ -44,11 +46,9 @@ require "../koneksi.php";
                 <div>
                     <button class="btn btn-success form-control" type="submit" name="loginbtn" style="margin-top: 10px;">Login</button>
                 </div>
-                <div>
-                    <a href="registrasi.php"><button class="btn btn-success form-control" type="submit" name="registrasibtn" style="margin-top: 10px;">Registrasi</button></a>
-                </div>
 
             </form>
+            <p>Don't have an account? <a href="registrasi.php">Sign up</a></p>
         </div>
         <div class="mt-3" style="width: 500px;">
             <?php
@@ -83,6 +83,9 @@ require "../koneksi.php";
             ?>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/796f8abcad.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

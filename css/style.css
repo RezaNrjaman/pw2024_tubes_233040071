@@ -19,7 +19,6 @@
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../image/tbi.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 15px;
 }
 
 .highlighted-kategori {
@@ -62,3 +61,63 @@
   object-fit: cover;
   object-position: center;
 }
+
+/* hero section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url(../img/ui.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero ::after {
+  content: ("");
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(0deg, rgba(243, 240, 240, 0.8) 8%, rgba(255, 255, 255, 0) 50%);
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+  color: rgb(41, 40, 40);
+}
+
+.hero .content h1 {
+  font-size: 4em;
+  color: gray;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.8);
+  line-height: 1;
+}
+
+.hero .content h1 span {
+  color: red;
+}
+
+.hero .content h4 {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  color: white;
+  line-height: 1.4;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.8);
+  mix-blend-mode: difference;
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: black;
+  background-color: gray;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.8);
+}
+/* akhir hero */
