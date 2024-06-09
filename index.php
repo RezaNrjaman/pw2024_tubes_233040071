@@ -50,9 +50,9 @@ $queryUniversitas = mysqli_query($conn, "SELECT id, nama, jumlah, foto FROM univ
     </div>
     <!-- univ -->
     <div class="container-fluid py-5 warna3" id="universitas">
-        <div class="container mt-5 text-center">
-            <h3>UNIVERSITAS</h3>
-            <div id="container">
+        <div class="container" id="container">
+            <div class="container mt-5 text-center">
+                <h3>UNIVERSITAS</h3>
                 <div class="row mt-5">
                     <?php
                     while ($data = mysqli_fetch_array($queryUniversitas)) {
@@ -75,8 +75,6 @@ $queryUniversitas = mysqli_query($conn, "SELECT id, nama, jumlah, foto FROM univ
     </div>
 
 
-    <!-- <script src="js/script.js"></script> -->
-
 
     <!-- Footer -->
     <footer class="text-white text-center pt-3 pb-4" style="background-color: #1a4d2e">
@@ -85,10 +83,9 @@ $queryUniversitas = mysqli_query($conn, "SELECT id, nama, jumlah, foto FROM univ
     <!-- Akhir Footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/796f8abcad.js" crossorigin="anonymous"></script>
+    <!-- <script src="js/script2.js"></script> -->
 
-    <script src="js/script2.js"></script>
-
-    <!-- <script>
+    <script>
         var keyword = document.getElementById("keyword");
         var tombolCari = document.getElementById("tombol-cari");
         var container = document.getElementById("container");
@@ -98,15 +95,14 @@ $queryUniversitas = mysqli_query($conn, "SELECT id, nama, jumlah, foto FROM univ
 
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == 4 && xhr.status == 200) {
-                    // container.innerHTML = xhr.responseText;
-                    container.innerHTML = keyword.value;
+                    container.innerHTML = xhr.responseText;
                 }
             };
 
-            xhr.open("GET", "../ajax/index2.php?keyword=" + keyword.value, true);
+            xhr.open("GET", "ajax/index2.php?keyword=" + keyword.value, true);
             xhr.send();
         });
-    </script> -->
+    </script>
 
 </body>
 
