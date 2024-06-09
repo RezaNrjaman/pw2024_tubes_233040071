@@ -48,7 +48,7 @@ $jumlahuniversitas = mysqli_num_rows($queryuniversitas);
     <?php require "navbar.php"; ?>
 
     <div class="container mt-5">
-        <nav aria-label="breadcrumb">
+        <nav aria-label="breadcrumb" class="pt-5">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">
                     <i class="fa-solid fa-house" style="color: #26cf3a;"></i>Home

@@ -8,17 +8,20 @@ function koneksiDB()
 function query($sql)
 {
     $conn = koneksiDB();
+
     $result = mysqli_query($conn, $sql);
     $rows = [];
     while ($row = mysqli_fetch_assoc($result)) {
         $rows[] = $row;
-    }
+    };
     return $rows;
 }
 
 function cari($data)
 {
-    $query = "SELECT * FROM universitas WHERE nama LIKE '%$data%'";
+    $query = "SELECT * FROM universitas
+    nama LIKE '%keyword%'";
+
     return query($query);
 }
 

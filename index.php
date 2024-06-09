@@ -80,7 +80,7 @@ $queryUniversitas = mysqli_query($conn, "SELECT id, nama, jumlah, foto FROM univ
 
     <!-- Footer -->
     <footer class="text-white text-center pt-3 pb-4" style="background-color: #1a4d2e">
-        <p>Created by <a href="https://www.instagram.com/reza.nrjaman/" class="text-white fw-bold">Reza Nurjaman</a></p>
+        <p>Created by <a href="https://www.instagram.com/reza.nrjaman/" class="text-white fw-bold" target="_blank">Reza Nurjaman</a></p>
     </footer>
     <!-- Akhir Footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

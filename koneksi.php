@@ -1,11 +1,6 @@
 <?php
 $conn = mysqli_connect('localhost', 'root', '', 'pw2024_tubes_233040071');
 
-// check connection
-if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    exit();
-}
 
 
 function query($sql)
@@ -19,7 +14,11 @@ function query($sql)
     };
     return $rows;
 }
-
+// check connection
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    exit();
+}
 
 
 function registrasi($data)

@@ -14,6 +14,7 @@ $jumlahUniversitas = count($universitas);
         <tr>
             <th>No.</th>
             <th>Nama</th>
+            <th>Foto</th>
             <th>Kategori</th>
             <th>Jumlah Fakultas</th>
             <th>Action</th>
@@ -34,6 +35,9 @@ $jumlahUniversitas = count($universitas);
                 <tr>
                     <td><?php echo $jumlah; ?></td>
                     <td><?php echo $data['nama']; ?></td>
+                    <td>
+                        <img src="../image/<?php echo $data['foto']; ?>" width="150px" height="100px">
+                    </td>
                     <td><?php echo $data['nama_kategori']; ?></td>
                     <td><?php echo $data['jumlah']; ?></td>
                     <td>
