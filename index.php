@@ -21,7 +21,32 @@ $queryUniversitas = mysqli_query($conn, "SELECT id, nama, jumlah, foto FROM univ
 </head>
 
 <body>
-    <?php require "navbar.php"; ?>
+    <nav class="navbar navbar-expand-lg navbar-dark warna1 fixed-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item ms-4 me-4">
+                        <a class="nav-link" href="#banner">Home</a>
+                    </li>
+                    <li class="nav-item ms-4 me-4">
+                        <a class="nav-link" href="#kategori">Kategori</a>
+                    </li>
+                    <li class="nav-item ms-4 me-4">
+                        <a class="nav-link" href="#universitas">Universitas</a>
+                    </li>
+                    <a href="admin/login.php"><button class="btn btn-success" type="submit">Login</button></a>
+                    <form class="d-flex" style="padding-left: 700px;" role="search" method="post" action="">
+                        <input class="form-control me-2" type="text" name="keyword" placeholder="Search" aria-label="Search" autocomplete="off" id="keyword">
+                        <button class="btn btn-outline-dark text-white me-3" type="submit" name="cari" id="tombol-cari">Search</button>
+                    </form>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
     <!-- banner -->
     <div class="container-fluid banner d-flex align-items-center" id="banner" style="background-size: cover; min-height: 100vh;">
         <div class="container text-center text-white">
@@ -83,7 +108,7 @@ $queryUniversitas = mysqli_query($conn, "SELECT id, nama, jumlah, foto FROM univ
     <!-- Akhir Footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/796f8abcad.js" crossorigin="anonymous"></script>
-    <!-- <script src="js/script2.js"></script> -->
+
 
     <script>
         var keyword = document.getElementById("keyword");

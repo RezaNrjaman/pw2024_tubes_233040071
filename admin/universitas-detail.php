@@ -44,8 +44,8 @@ function generateRandomString($length = 20)
 
 <body>
     <?php require "navbar.php"; ?>
-    <div class="container mt-5">
-        <h2>Detail Universitas</h2>
+    <div class="container pt-5 mt-5">
+        <h2><a href="universitas.php"><i class="fa-solid fa-backward" style="margin-right: 25px; color:black;"></i></a>Detail Universitas</h2>
 
         <div class="col-12 col-md-6">
             <form action="" method="post" enctype="multipart/form-data">

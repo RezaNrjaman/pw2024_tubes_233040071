@@ -24,7 +24,7 @@ $result = mysqli_query($conn, $queryUniversitas);
                     <div class="col-sm-6 col-md-4 mb-3">
                         <div class="card h-100">
                             <div class="image-box">
-                                <img src="../image/<?php echo $data['foto']; ?>" class="card-img-top" alt="...">
+                                <img src="image/<?php echo $data['foto']; ?>" class="card-img-top" alt="...">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"> <?php echo $data['nama']; ?></h5>

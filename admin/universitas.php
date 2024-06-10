@@ -84,7 +84,7 @@ function generateRandomString($length = 20)
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active" aria-current="page">
 
-                        <a href="../admin" class="no-decoration" style="color: #26cf3a;">
+                        <a class="no-decoration" style="color: #26cf3a;">
                             <i class="fa-solid fa-house" style="color: #1A4D2E;"></i>Home
                         </a>
                     </li>
@@ -206,7 +206,7 @@ function generateRandomString($length = 20)
 
             </div>
             <h2>List Universitas</h2>
-            <div class="table-responsive mt-5 mb-5">
+            <table border="1" cellpadding="10" cellspacing="0" class="table">
                 <div id="container">
                     <table class="table">
                         <thead>
@@ -252,29 +252,28 @@ function generateRandomString($length = 20)
                         </tbody>
                     </table>
                 </div>
-            </div>
         </div>
-        <script>
-            var keyword = document.getElementById("keyword");
-            var tombolCari = document.getElementById("tombol-cari");
-            var container = document.getElementById("container");
+    </div>
+    <script>
+        var keyword = document.getElementById("keyword");
+        var tombolCari = document.getElementById("tombol-cari");
+        var container = document.getElementById("container");
 
-            keyword.addEventListener("keyup", function() {
-                var xhr = new XMLHttpRequest();
+        keyword.addEventListener("keyup", function() {
+            var xhr = new XMLHttpRequest();
 
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        container.innerHTML = xhr.responseText;
-                    }
-                };
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    container.innerHTML = xhr.responseText;
+                }
+            };
 
-                xhr.open("GET", "../ajax/universitas.php?keyword=" + keyword.value, true);
-                xhr.send();
-            });
-        </script>
-        <!-- <script src="../js/script.js"></script> -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/796f8abcad.js" crossorigin="anonymous"></script>
+            xhr.open("GET", "../ajax/universitas.php?keyword=" + keyword.value, true);
+            xhr.send();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/796f8abcad.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
