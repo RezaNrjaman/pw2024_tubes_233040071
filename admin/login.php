@@ -1,10 +1,32 @@
 <?php
 session_start();
 require "../koneksi.php";
+
+if (isset($_POST['loginbtn'])) {
+    $username = htmlspecialchars($_POST['username']);
+    $password = htmlspecialchars($_POST['password']);
+
+    $query = mysqli_query($conn, "SELECT * FROM user WHERE username='$username'");
+    $countdata = mysqli_num_rows($query);
+    $data = mysqli_fetch_array($query);
+
+    if ($countdata > 0) {
+        if (password_verify($password, $data['password'])) {
+            $_SESSION['username'] = $data['username'];
+            $_SESSION['login'] = true;
+            header('Location: universitas.php');
+            exit();
+        } else {
+            $error_message = "Password salah";
+        }
+    } else {
+        $error_message = "Akun tidak tersedia";
+    }
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
@@ -25,14 +47,12 @@ require "../koneksi.php";
         color: #198754;
         background-color: whitesmoke;
         border-radius: 10px;
-
     }
 </style>
 
 <body>
     <div class="main d-flex flex-column justify-content-center align-items-center">
-
-        <h3 style="color: white;"><a href="../index.php"><i class="fa-solid fa-backward" style="margin-right: 25px; color:white;"></i></a>LOGIN FOR ADMIN</h3>
+        <h3 style="color: white;"><a href="../index.php"><i class="fa-solid fa-backward" style="margin-right: 25px; color:white;"></i></a>LOGIN UNTUK ADMIN</h3>
         <div class="login-box p-5 shadow">
             <form action="" method="post">
                 <div>
@@ -46,39 +66,13 @@ require "../koneksi.php";
                 <div>
                     <button class="btn btn-success form-control" type="submit" name="loginbtn" style="margin-top: 10px;">Login</button>
                 </div>
-
             </form>
-            <p>Don't have an account? <a href="registrasi.php">Sign up</a></p>
+            <p>Belum punya akun? <a href="registrasi.php">Daftar</a></p>
         </div>
         <div class="mt-3" style="width: 500px;">
             <?php
-            if (isset($_POST['loginbtn'])) {
-                $username = htmlspecialchars($_POST['username']);
-                $password = htmlspecialchars($_POST['password']);
-
-                $query = mysqli_query($conn, "SELECT * FROM user WHERE username='$username'");
-                $countdata = mysqli_num_rows($query);
-                $data = mysqli_fetch_array($query);
-
-                if ($countdata > 0) {
-                    if (password_verify($password, $data['password'])) {
-                        $_SESSION['username'] = $data['username'];
-                        $_SESSION['login'] = true;
-                        header('location: universitas.php');
-                    } else {
-            ?>
-                        <div class="alert alert-warning" role="alert">
-                            Password salah
-                        </div>
-                    <?php
-                    }
-                } else {
-                    ?>
-                    <div class="alert alert-warning" role="alert">
-                        Akun tidak tersedia
-                    </div>
-            <?php
-                }
+            if (isset($error_message)) {
+                echo "<div class='alert alert-warning' role='alert'>$error_message</div>";
             }
             ?>
         </div>
