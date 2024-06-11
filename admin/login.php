@@ -2,13 +2,16 @@
 session_start();
 require "../koneksi.php";
 
+
 if (isset($_POST['loginbtn'])) {
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
 
+
     $query = mysqli_query($conn, "SELECT * FROM user WHERE username='$username'");
     $countdata = mysqli_num_rows($query);
     $data = mysqli_fetch_array($query);
+
 
     if ($countdata > 0) {
         if (password_verify($password, $data['password'])) {
@@ -25,8 +28,10 @@ if (isset($_POST['loginbtn'])) {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="id">
+
 
 <head>
     <meta charset="UTF-8">
@@ -40,6 +45,7 @@ if (isset($_POST['loginbtn'])) {
         background-color: #198754;
     }
 
+
     .login-box {
         width: 500px;
         height: 300px;
@@ -49,6 +55,7 @@ if (isset($_POST['loginbtn'])) {
         border-radius: 10px;
     }
 </style>
+
 
 <body>
     <div class="main d-flex flex-column justify-content-center align-items-center">
@@ -78,8 +85,10 @@ if (isset($_POST['loginbtn'])) {
         </div>
     </div>
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/796f8abcad.js" crossorigin="anonymous"></script>
 </body>
+
 
 </html>
